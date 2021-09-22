@@ -1,10 +1,10 @@
-#from BeautifulSoup import *
-
+import urllib.request
+import urllib.parse
+import re
+import os
+from better_profanity import profanity
 
 # Function to get profanities from the file
-import os
-
-
 def getProfanities(fileName):
     fileObj = open(os.path.dirname(__file__) + fileName, "r")  # opens the file in read mode
     words = fileObj.read().replace(",", "\n")  # get list and prepare it for the splitlines
@@ -14,10 +14,9 @@ def getProfanities(fileName):
         profanities[i] = profanities[i].strip()
     return profanities
 
-
 profanities = getProfanities("\\..\\bannedWords.txt")
-print(profanities[0])
-print(profanities[10])
+profanity.load_censor_words(profanities)
+print(profanity.censor('damn i have to watch a lot of fucking f u c k python tutorials these dick hole days'))
 
 # f = open("juice.html","w")
 
