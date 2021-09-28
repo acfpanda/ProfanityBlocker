@@ -1,0 +1,9 @@
+# created by virtualenv automatically
+Scripts/*
+unicode_characters/*
+wordlist/*
+pyvenv.cfg
+Lib/site-packages/*
+!Lib/site-packages/better_profanity/
+Lib/site-packages/better_profanity/*
+!Lib/site-packages/better_profanity/constants.py
